@@ -1,0 +1,14 @@
+1)I left only the columns, the rest were considered bad (incomplete) for the models:
+
+['ID', 'SKU', 'date', 'sales', 'Year', 'Карантин', 'USD', 'Euro', 'Выборы', 'is_monday',
+ 'is_tuesday', 'is_wednesday', 'is_thursday', 'is_friday', 'is_saturday', 'is_sunday', 'cityId']
+2)
+catboost + data>2021-07-01 + don`t use column price + devided data by category and fit 5 different models + MAE as loss
+3)
+data>2021-07-01, tested the hypothesis and it worked
+drop price, because on the test 0 sales correspond to 0 prices and this overfit our tree
+4)
+CatBoostRegressor(iterations=1000, depth=16, learning_rate=0.8,task_type="GPU", loss_function="MAE")
+trial and error
+5)geo;data;weekday;product info
+
